@@ -8,6 +8,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/productos")
+
 public class ProductoController {
     private final ProductoService productoService;
     @Autowired
@@ -39,4 +40,15 @@ public class ProductoController {
     public Producto buscarPorId(@RequestBody int id){
         return productoService.obtenerPorId(id);
     }
+
+    @DeleteMapping("/eliminar")
+    public void eliminar(@RequestBody int id){
+        productoService.eliminarProducto(id);
+    }
+
+    @PutMapping("/actualizarProducto")
+    public Producto actualizar(@RequestBody int id, Producto actualizado){
+        return productoService.actualizarProducto(id, actualizado);
+    }
+
 }
