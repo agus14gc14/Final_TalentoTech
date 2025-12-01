@@ -1,5 +1,6 @@
 package com.taltech.ecomm;
 import com.taltech.ecomm.modelos.Producto;
+import com.taltech.ecomm.operaciones.manejadorJson;
 import com.taltech.ecomm.services.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -46,9 +47,11 @@ public class ProductoController {
         productoService.eliminarProducto(id);
     }
 
-    @PutMapping("/actualizarProducto")
-    public Producto actualizar(@RequestBody int id, Producto actualizado){
-        return productoService.actualizarProducto(id, actualizado);
+    @PostMapping ("/actualizarProducto")
+    public Producto actualizar(@RequestBody manejadorJson manejador){
+        Integer id = manejador.getIdJson();
+        Producto obtenido = manejador.getProductoJson();
+        return productoService.actualizarProducto(id, obtenido);
     }
 
 }

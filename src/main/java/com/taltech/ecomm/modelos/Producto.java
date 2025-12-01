@@ -10,6 +10,12 @@ public class Producto {
     private String descripcion;
     private double precio;
 
+
+
+    public Producto(){ //Vacio para instanciacion de hibernate
+
+    }
+
     public Integer getId() {
         return id;
     }
@@ -26,10 +32,6 @@ public class Producto {
         setNombre(nombre);
         setDescripcion(descripcion);
         setPrecio(precio);
-    }
-
-    public Producto(){ //Vacio para instanciacion de hibernate
-
     }
 
     public String getNombre() {
