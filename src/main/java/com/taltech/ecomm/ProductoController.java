@@ -38,7 +38,7 @@ public class ProductoController {
     }
 
     @GetMapping ("/busqueda")
-    public Producto buscarPorId(@RequestBody int id){
+    public Producto buscarPorId(@RequestParam int id){
         return productoService.obtenerPorId(id);
     }
 

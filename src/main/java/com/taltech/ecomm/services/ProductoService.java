@@ -44,6 +44,7 @@ public class ProductoService {
             p.setNombre(datos.getNombre());
             p.setDescripcion(datos.getDescripcion());
             p.setPrecio(datos.getPrecio());
+            p.setImagenUrl(datos.getImagenUrl());
             repo.save(p);
             return p;
         }
